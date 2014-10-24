@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class game{
+    public static void main(String[] args){
+	boolean playing = true;
+	int num = (int) (Math.random()*100);
+
+	/**********************************
+                  Guessing Game
+	**********************************/                              
+	while(playing){
+	    Scanner s = new Scanner(System.in);
+	    System.out.print("Pick a number, yo: ");
+	    int guess = s.nextInt();
+	    if(guess== num){
+		System.out.println("Good, you can guess numbers!");
+	    }
+	    if(guess!=num){
+		System.out.println("You suck at numbers!");
+	    }
+	    System.out.println("Would you like to play again?(1=y/2=n)");
+	    int res =  s.nextInt();
+	    if (res == 2){playing = false;}
+	}
+	System.out.println("Thank you for playing");
+    }
+}
